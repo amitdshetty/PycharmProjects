@@ -1,0 +1,28 @@
+"""
+Given a stream of numbers, select a random number from the stream, with O(1) space in selection.
+"""
+import random
+
+res = 0
+count = 0
+
+def get_random_number(number):
+    global count, res
+    count = count + 1
+    if count == 1:
+        return number
+    else:
+        i = random.randrange(count)
+        print('Hello', i)
+        if i == count-1:
+            res = number
+    return res
+
+
+stream = [7, 2, 4, 9, 10, 13]
+for i in range(len(stream)):
+    if i == 0:
+        res = stream[0]
+    else:
+        res1 = get_random_number(stream[i])
+print(res)

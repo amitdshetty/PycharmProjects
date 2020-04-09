@@ -1,0 +1,24 @@
+class Solution(object):
+    count1 = 0
+
+    def numberOfSteps(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        count = 0
+        if num == 0:
+            return self.count1
+        if num % 2 == 0:
+            num = num // 2
+            self.count1 += count + 1
+            self.numberOfSteps(num)
+        else:
+            num = num - 1
+            self.count1 += count + 1
+            self.numberOfSteps(num)
+        return self.count1
+
+sol = Solution()
+result = sol.numberOfSteps(14)
+print(result)
